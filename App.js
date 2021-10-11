@@ -7,20 +7,6 @@ import {
 } from 'react-native-webrtc';
 //import { io } from "socket.io-client";
 
-async function getTurnCredentials() {
-  var accountSid = 'AC5abe88b388c47f25d3af57a3655fbcbb'; // Your Account SID from www.twilio.com/console
-  var authToken = '200a9b1859f1290ef5ae7bb23dc4d35d';   // Your Auth Token from www.twilio.com/console
-
-  var client = new twilio(accountSid, authToken);
-
-  var turnCreds = await client.tokens.create();
-  //.then(token => console.log(token.username));
-
-  console.log("*************  Turn creds: " + JSON.stringify(turnCreds));
-
-  return turnCreds;
-}
-
 const App = () => {
 
   const [peer, setPeer] = useState(new Peer());
